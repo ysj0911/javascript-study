@@ -1,10 +1,15 @@
-const h1 = document.querySelector(".hello h1");
-
-function handleTitleClick(){
-   h1.className = "active";
-   console.log()
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASSNAME = "hidden";
+ 
+function onLoginSubmit(event){
+   event.preventDefault();
+   loginForm.classList.add(HIDDEN_CLASSNAME);
+   const username = loginInput.value;
+   greeting.innerText = `Hello ${username}`;
+   greeting.classList.remove(HIDDEN_CLASSNAME);
+   console.log(username);
 }
 
-h1.addEventListener("click", handleTitleClick)
-
-console.log("Hello World")
+loginForm.addEventListener("submit", onLoginSubmit); 
