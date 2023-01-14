@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="style.css">
     <title>Momentum</title>
 </head>
-<body>
+<body style> 
     <form class="hidden" id="login-form">
         <input 
             required
-            maxlength="15"
+            maxlength="15" 
             type="text"
             placeholder="What is your name?"
         />
         <input type="submit" value="Log In" />
     </form>
     <h1 id="greeting" class="hidden"></h1>
-    <script src="script.js"></script>
+    <h2 id="clock"></h2>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+    <script src="greetings.js"></script>
+    <script src="clock.js"></script>
 </body>
 </html>
