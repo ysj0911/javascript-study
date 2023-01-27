@@ -4,26 +4,25 @@
         <div id="root"></div>
     </body>
     <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production=.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js">
-    </script>
-    
-    <script>
-        const root = document.getElementById("root");
-        
-        function App(){
-            const [counter, setCounter] = React.useState(0);
-            const onClick = () => {
-                modifier(counter + 1);
-                
-            };
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function SaveBtn(){
+            return <button>Save Changes</button>;
+        }
+        function Confirmbtn(){
+            return <button>Confirm</button>;
+        }
+        function App(){         
+            
             return (
                 <div>
-                    <h3>Total clicks: {data[0]}</h3>
-                    <button onClick={onClick}>Click me</button>
-                    </div>  
+                    <SaveBtn />
+                    <Confirmbtn />
+                </div>  
             );
-        }
-       
+        }   
+        const root = document.getElementById("root");
+        ReactDOM.render(<App />, root);
     </script>
 </html> 
