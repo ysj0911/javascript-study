@@ -3,22 +3,36 @@
     <body>
         <div id="root"></div>
     </body>
-    <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.development.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
     <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        function SaveBtn(){
-            return <button>Save Changes</button>;
+        function Btn({text, fontSize}){
+            return(
+                <button
+                style={{
+                    backgroundColor: "tomato",
+                    color: "white",
+                    padding: "10px 20px",
+                    border: 0,
+                    borderRadius: 10,
+                    fontSize: fontSize,
+                }}
+            >
+                {text}
+            </button>
+            )
         }
-        function Confirmbtn(){
-            return <button>Confirm</button>;
+        Btn.propTypes = {
+            text: PropTypes.string,
+            fontSize: PropTypes.number,
         }
         function App(){         
             
             return (
                 <div>
-                    <SaveBtn />
-                    <Confirmbtn />
+                    <Btn text="Save Changes" fontSize={18} />
                 </div>  
             );
         }   
